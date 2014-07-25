@@ -63,8 +63,6 @@ public class ForecastFragment extends Fragment {
         ListView forecastText = (ListView) rootView.findViewById(R.id.listview_forecast);
         forecastText.setAdapter(adapter);
 
-        //String forecastAPIData = getAPIData("http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7");
-
         return rootView;
     }
 
@@ -99,7 +97,7 @@ public class ForecastFragment extends Fragment {
                 // Construct the URL for the OpenWeatherMap query
                 // Possible parameters are avaiable at OWM's forecast API page, at
                 // http://openweathermap.org/API#forecast
-                URL url = new URL(urlString[0]);
+                URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7");
 
                 // Create the request to OpenWeatherMap, and open the connection
                 urlConnection = (HttpURLConnection) url.openConnection();
