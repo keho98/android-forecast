@@ -108,9 +108,9 @@ public class ForecastFragment extends Fragment {
     private void updateWeather() {
         FetchWeatherTask weatherTask = new FetchWeatherTask();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String loc = prefs.getString(R.string.pref_location_key),
+        String loc = prefs.getString(R.string.pref_location_key);
                         getString(R.string.pref_location_default_value);
-        weatherTask.execute();
+        weatherTask.execute(loc);
     }
 
     public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
